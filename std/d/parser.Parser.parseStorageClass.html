@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../../style.css"/><script src="../../highlight.pack.js"></script>
+<title>parseStorageClass</title>
+<base href="../../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.d.<a href="std/d/parser.Parser.html">parser</a>.<a href="std/d/parser.Parser.html">Parser</a>.parseStorageClass</div>
+<pre><code>public StorageClass parseStorageClass()
+</code></pre><div class="section">
+Parses a StorageClass
+</div>
+<div class="section">
+<pre class="grammar"><span style="font-weight: bold">storageClass</span>:
+     <span>alignAttribute</span>
+   | <span>linkageAttribute</span>
+   | <span>atAttribute</span>
+   | <span>typeConstructor</span>
+   | <span>deprecated</span>
+   | <span style="font-weight: italic; color: blue;">'abstract'</span>
+   | <span style="font-weight: italic; color: blue;">'auto'</span>
+   | <span style="font-weight: italic; color: blue;">'enum'</span>
+   | <span style="font-weight: italic; color: blue;">'extern'</span>
+   | <span style="font-weight: italic; color: blue;">'final'</span>
+   | <span style="font-weight: italic; color: blue;">'virtual'</span>
+   | <span style="font-weight: italic; color: blue;">'nothrow'</span>
+   | <span style="font-weight: italic; color: blue;">'override'</span>
+   | <span style="font-weight: italic; color: blue;">'pure'</span>
+   | <span style="font-weight: italic; color: blue;">'ref'</span>
+   | <span style="font-weight: italic; color: blue;">'___gshared'</span>
+   | <span style="font-weight: italic; color: blue;">'scope'</span>
+   | <span style="font-weight: italic; color: blue;">'static'</span>
+   | <span style="font-weight: italic; color: blue;">'synchronized'</span>
+   ;</pre>
+</div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

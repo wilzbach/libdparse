@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../../style.css"/><script src="../../highlight.pack.js"></script>
+<title>StringCache</title>
+<base href="../../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.d.<a href="std/d/lexer.html">lexer</a>.StringCache</div>
+<pre><code>public struct StringCache</code></pre>
+<div class="section">
+The string cache is used for string interning.
+</div>
+<div class="section">
+It will only story a single copy of any string that it is asked to hold.
+Interned strings can be compared for equality by comparing their <b>.ptr</b>
+field.
+
+Default and postbilt constructors are disabled. When a StringCache goes out
+of scope, the memory held by it is freed.
+
+
+</div>
+<div class="section">
+<h3>See Also</h3>
+ <a href="http://en.wikipedia.org/wiki/String_interning">http://en.wikipedia.org/wiki/String_interning</a>
+</div>
+<div class="section">
+<h3>Enums</h3>
+<table>
+<tr><td><a href="std/d/lexer.StringCache.defaultBucketCount.html">defaultBucketCount</a></td><td></td><td>The default bucket count for the string cache.</td></tr></table>
+<h3>Functions</h3>
+<table>
+<tr><td><a href="std/d/lexer.StringCache.this.html">this</a></td><td></td><td></td></tr><tr><td><a href="std/d/lexer.StringCache.intern.html">intern</a></td><td></td><td>Caches a string.</td></tr><tr><td><a href="std/d/lexer.StringCache.intern.html">intern</a></td><td></td><td>Caches a string.</td></tr><tr><td><a href="std/d/lexer.StringCache.intern.html">intern</a></td><td></td><td>Caches a string as above, but uses the given hash code instead of
+calculating one itself. Use this alongside hashStep() can reduce the
+amount of work necessary when lexing dynamic tokens.</td></tr><tr><td><a href="std/d/lexer.StringCache.hashStep.html">hashStep</a></td><td></td><td>Incremental hashing.
+</td></tr></table>
+</div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style.css"/><script src="../highlight.pack.js"></script>
+<title>Lexer</title>
+<base href="../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.<a href="std/lexer.html">lexer</a>.Lexer</div>
+<pre><code>public template Lexer(Token, alias defaultTokenFunction, alias tokenSeparatingFunction, alias staticTokens, alias dynamicTokens, alias possibleDefaultTokens, alias tokenHandlers)</code></pre>
+<div class="section">
+The implementation of the _lexer is contained within this mixin template.
+</div>
+<div class="section">
+To use it, this template should be mixed in to a struct that represents the
+_lexer for your language. This struct should implement the following methods:
+<ul><li>popFront, which should call this mixin's _popFront() and
+       additionally perform any token filtering or shuffling you deem
+       necessary. For example, you can implement popFront to skip comment or
+        tokens.</li>
+   <li>A function that serves as the default token lexing function. For
+       most languages this will be the identifier lexing function. This
+       should then be passed to the Lexer template mixin as the
+       <a href="#.defaultTokenFunction defaultTokenFunction"></a> template
+       parameter.</li>
+   <li>A function that is able to determine if an identifier/keyword has
+       come to an end. This function must return <b>bool</b> and take
+       a single <b>size_t</b> argument representing the number of
+       bytes to skip over before looking for a separating character.</li>
+   <li>Any functions referred to in the tokenHandlers template paramater.
+       These functions must be marked <b>pure nothrow</b>, take no
+       arguments, and return a token</li>
+   <li>A constructor that initializes the range field as well as calls
+       popFront() exactly once (to initialize the _front field).</li>
+</ul>
+
+</div>
+<div class="section">
+<h3>Parameters</h3>
+<table class="params">
+<tr class="param"><td class="paramName">Token</td><td class="paramDoc">TokenStructure</td></tr>
+<tr class="param"><td class="paramName">defaultTokenFunction</td><td class="paramDoc"><a href="#.defaultTokenFunction">defaultTokenFunction</a></td></tr>
+<tr class="param"><td class="paramName">tokenSeparatingFunction</td><td class="paramDoc"><a href="#.tokenSeparatingFunction">tokenSeparatingFunction</a></td></tr>
+<tr class="param"><td class="paramName">staticTokens</td><td class="paramDoc"><a href="#.staticTokens">staticTokens</a></td></tr>
+<tr class="param"><td class="paramName">dynamicTokens</td><td class="paramDoc"><a href="#.dynamicTokens">dynamicTokens</a></td></tr>
+<tr class="param"><td class="paramName">possibleDefaultTokens</td><td class="paramDoc"><a href="#.possibleDefaultTokens">possibleDefaultTokens</a></td></tr>
+<tr class="param"><td class="paramName">tokenHandlers</td><td class="paramDoc"><a href="#.tokenHandlers">tokenHandlers</a></td></tr>
+</table></div>
+<div class="section">
+<h3>Examples</h3>
+
+<pre><code>struct CalculatorLexer
+{
+   mixin Lexer!(IdType, Token, defaultTokenFunction, isSeparating,
+       staticTokens, dynamicTokens, possibleDefaultTokens, tokenHandlers);
+
+   this (ubyte[] bytes)
+   {
+       this.range = LexerRange(bytes);
+       popFront();
+   }
+
+   void popFront() pure
+   {
+       _popFront();
+   }
+
+   Token lexNumber() pure nothrow @safe
+   {
+       // implementation goes here
+   }
+
+   Token lexWhitespace() pure nothrow @safe
+   {
+       // implementation goes here
+   }
+
+   Token defaultTokenFunction() pure nothrow @safe
+   {
+       // There is no default token in the example calculator language, so
+       // this is always an error.
+       range.popFront();
+       return Token(tok!"");
+   }
+
+   bool isSeparating(size_t offset) pure nothrow @safe
+   {
+       // For this example language, always return true.
+       return true;
+   }
+}</code></pre>
+</div>
+<div class="section">
+<h3>Variables</h3>
+<table>
+<tr><td><a href="std/lexer.Lexer.range.html">range</a></td><td><pre><code>LexerRange</code></pre></td><td>The lexer input.</td></tr><tr><td><a href="std/lexer.Lexer._front.html">_front</a></td><td><pre><code>Token</code></pre></td><td>The token that is currently at the front of the range.</td></tr></table>
+<h3>Functions</h3>
+<table>
+<tr><td><a href="std/lexer.Lexer.front.html">front</a></td><td></td><td>Implements the range primitive _front.</td></tr><tr><td><a href="std/lexer.Lexer._popFront.html">_popFront</a></td><td></td><td>Advances the lexer to the next token and stores the new current token in
+the _front variable.</td></tr><tr><td><a href="std/lexer.Lexer.empty.html">empty</a></td><td></td><td>Implements the range primitive _empty.</td></tr></table>
+</div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

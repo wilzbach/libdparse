@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../../style.css"/><script src="../../highlight.pack.js"></script>
+<title>parseModule</title>
+<base href="../../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.d.<a href="std/d/parser.html">parser</a>.parseModule</div>
+<pre><code>public Module parseModule(const(Token)[] tokens, string fileName, CAllocator allocator = null, void function(string, size_t, size_t, string, bool) messageFunction = null)
+</code></pre><div class="section">
+<h3>Parameters</h3>
+<table class="params">
+<tr class="param"><td class="paramName">tokens</td><td class="paramDoc">the tokens parsed by std.d.lexer</td></tr>
+<tr class="param"><td class="paramName">fileName</td><td class="paramDoc">the name of the file being parsed</td></tr>
+<tr class="param"><td class="paramName">messageFunction</td><td class="paramDoc">a function to call on error or warning messages. The parameters are the file name, line number, column number, the error or warning message, and a boolean (true means error, false means warning).</td></tr>
+</table></div>
+<div class="section">
+<h3>Returns</h3>
+ the parsed module
+</div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

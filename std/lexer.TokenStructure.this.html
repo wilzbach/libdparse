@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style.css"/><script src="../highlight.pack.js"></script>
+<title>this</title>
+<base href="../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.<a href="std/lexer.TokenStructure.html">lexer</a>.<a href="std/lexer.TokenStructure.html">TokenStructure</a>.this</div>
+<pre><code>public this(IdType type)
+</code></pre><div class="section">
+Constructs a token from a token type.
+
+</div>
+<div class="section">
+<h3>Parameters</h3>
+<table class="params">
+<tr class="param"><td class="paramName">type</td><td class="paramDoc">the token type
+</td></tr>
+</table></div>
+<hr/><pre><code>public this(IdType type, string text, size_t line, size_t column, size_t index)
+</code></pre><div class="section">
+Constructs a token.
+
+</div>
+<div class="section">
+<h3>Parameters</h3>
+<table class="params">
+<tr class="param"><td class="paramName">type</td><td class="paramDoc">the token type</td></tr>
+<tr class="param"><td class="paramName">text</td><td class="paramDoc">the text of the token, which may be null</td></tr>
+<tr class="param"><td class="paramName">line</td><td class="paramDoc">the line number at which this token occurs</td></tr>
+<tr class="param"><td class="paramName">column</td><td class="paramDoc">the column number at which this token occurs</td></tr>
+<tr class="param"><td class="paramName">index</td><td class="paramDoc">the byte offset from the beginning of the input at which this token occurs
+</td></tr>
+</table></div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

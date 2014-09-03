@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../../style.css"/><script src="../../highlight.pack.js"></script>
+<title>parseTypeSpecialization</title>
+<base href="../../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.d.<a href="std/d/parser.Parser.html">parser</a>.<a href="std/d/parser.Parser.html">Parser</a>.parseTypeSpecialization</div>
+<pre><code>public TypeSpecialization parseTypeSpecialization()
+</code></pre><div class="section">
+Parses a TypeSpecialization
+</div>
+<div class="section">
+<pre class="grammar"><span style="font-weight: bold">typeSpecialization</span>:
+     <span>type</span>
+   | <span style="font-weight: italic; color: blue;">'struct'</span>
+   | <span style="font-weight: italic; color: blue;">'union'</span>
+   | <span style="font-weight: italic; color: blue;">'class'</span>
+   | <span style="font-weight: italic; color: blue;">'interface'</span>
+   | <span style="font-weight: italic; color: blue;">'enum'</span>
+   | <span style="font-weight: italic; color: blue;">'function'</span>
+   | <span style="font-weight: italic; color: blue;">'delegate'</span>
+   | <span style="font-weight: italic; color: blue;">'super'</span>
+   | <span style="font-weight: italic; color: blue;">'const'</span>
+   | <span style="font-weight: italic; color: blue;">'immutable'</span>
+   | <span style="font-weight: italic; color: blue;">'inout'</span>
+   | <span style="font-weight: italic; color: blue;">'shared'</span>
+   | <span style="font-weight: italic; color: blue;">'return'</span>
+   | <span style="font-weight: italic; color: blue;">'typedef'</span>
+   | <span style="font-weight: italic; color: blue;">'___parameters'</span>
+   ;</pre>
+</div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

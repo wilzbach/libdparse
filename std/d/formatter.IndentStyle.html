@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../../style.css"/><script src="../../highlight.pack.js"></script>
+<title>IndentStyle</title>
+<base href="../../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.d.<a href="std/d/formatter.html">formatter</a>.IndentStyle</div>
+<pre><code>public enum IndentStyle</code></pre>
+<div class="section">
+The only brace styles worth using.
+</div>
+<div class="section">
+<h3>Values</h3>
+<table>
+<tr><td>allman</td><td></td><td><pre><code>if (something)
+{
+   foo();
+   bar();
+}
+else
+{
+   bar();
+   baz();
+}</code></pre></td></tr><tr><td>otbs</td><td></td><td><pre><code>if (something) {
+   foo();
+   bar();
+} else {
+   bar();
+   baz();
+}</code></pre></td></tr></table>
+</div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

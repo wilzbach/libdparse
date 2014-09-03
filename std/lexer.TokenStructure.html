@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style.css"/><script src="../highlight.pack.js"></script>
+<title>TokenStructure</title>
+<base href="../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.<a href="std/lexer.html">lexer</a>.TokenStructure</div>
+<pre><code>public struct TokenStructure(IdType, string extraFields = "")</code></pre>
+<div class="section">
+The token that is returned by the lexer.
+
+</div>
+<div class="section">
+<h3>Parameters</h3>
+<table class="params">
+<tr class="param"><td class="paramName">IdType</td><td class="paramDoc">The D type of the "type" token type field.</td></tr>
+<tr class="param"><td class="paramName">extraFields</td><td class="paramDoc">A string containing D code for any extra fields that should be included in the token structure body. This string is passed directly to a mixin statement.</td></tr>
+</table></div>
+<div class="section">
+<h3>Examples</h3>
+
+<pre><code>// No extra struct fields are desired in this example, so leave it blank.
+alias Token = TokenStructure!(IdType, "");
+Token minusToken = Token(tok!"-");</code></pre>
+</div>
+<div class="section">
+<h3>Variables</h3>
+<table>
+<tr><td><a href="std/lexer.TokenStructure.text.html">text</a></td><td><pre><code>string</code></pre></td><td>The _text of the token.</td></tr><tr><td><a href="std/lexer.TokenStructure.line.html">line</a></td><td><pre><code>size_t</code></pre></td><td>The _line number at which this token occurs.</td></tr><tr><td><a href="std/lexer.TokenStructure.column.html">column</a></td><td><pre><code>size_t</code></pre></td><td>The _column number at which this token occurs. This is measured in bytes
+and may not be correct when tab characters are involved.</td></tr><tr><td><a href="std/lexer.TokenStructure.index.html">index</a></td><td><pre><code>size_t</code></pre></td><td>The byte offset from the beginning of the input at which this token
+occurs.</td></tr><tr><td><a href="std/lexer.TokenStructure.type.html">type</a></td><td><pre><code>IdType</code></pre></td><td>The token type.</td></tr></table>
+<h3>Functions</h3>
+<table>
+<tr><td><a href="std/lexer.TokenStructure.opEquals.html">opEquals</a></td><td></td><td></td></tr><tr><td><a href="std/lexer.TokenStructure.this.html">this</a></td><td></td><td>Constructs a token from a token type.
+</td></tr><tr><td><a href="std/lexer.TokenStructure.this.html">this</a></td><td></td><td>Constructs a token.
+</td></tr></table>
+</div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

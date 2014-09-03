@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../../style.css"/><script src="../../highlight.pack.js"></script>
+<title>parseParameter</title>
+<base href="../../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.d.<a href="std/d/parser.Parser.html">parser</a>.<a href="std/d/parser.Parser.html">Parser</a>.parseParameter</div>
+<pre><code>public Parameter parseParameter()
+</code></pre><div class="section">
+Parses a Parameter
+</div>
+<div class="section">
+<pre class="grammar"><span style="font-weight: bold">parameter</span>:
+   <span>parameterAttribute</span>* <span>type</span> ((<span style="font-weight: italic; color: blue;">Identifier</span> <span>typeSuffix</span>*)? <span style="font-weight: italic; color: blue;">'...'</span> | (<span style="font-weight: italic; color: blue;">Identifier</span>? (<span style="font-weight: italic; color: blue;">'='</span> <span>assignExpression</span>)?))?
+   ;</pre>
+</div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

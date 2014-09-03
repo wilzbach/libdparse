@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style.css"/><script src="../highlight.pack.js"></script>
+<title>TokenId</title>
+<base href="../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.<a href="std/lexer.html">lexer</a>.TokenId</div>
+<pre><code>public template TokenId(IdType, alias staticTokens, alias dynamicTokens, alias possibleDefaultTokens, string symbol)</code></pre>
+<div class="section">
+Generates the token type identifier for the given symbol.
+</div>
+<div class="section">
+There are two special cases:
+<ul><li>If symbol is <span style="color: red;">""</span>, then the token identifier will be 0</li>
+   <li>If symbol is <span style="color: red;">"\0"</span>, then the token identifier will be the maximum
+       valid token type identifier</li>
+</ul>
+In all cases this template will alias itself to a constant of type IdType.
+This template will fail at compile time if <i>symbol</i> is not one of
+the staticTokens, dynamicTokens, or possibleDefaultTokens.
+
+</div>
+<div class="section">
+<h3>Examples</h3>
+
+<pre><code>template tok(string symbol)
+{
+   alias tok = TokenId!(IdType, staticTokens, dynamicTokens,
+       possibleDefaultTokens, symbol);
+}
+// num and plus are of type ubyte.
+IdType plus = tok!"+";
+IdType num = tok!"numberLiteral";</code></pre>
+</div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

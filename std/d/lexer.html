@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../../style.css"/><script src="../../highlight.pack.js"></script>
+<title>std.d.lexer</title>
+<base href="../../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.d.lexer</div>
+<div class="section">
+<h3>Enums</h3>
+<table>
+<tr><td><a href="std/d/lexer.operators.html">operators</a></td><td></td><td>Operators</td></tr><tr><td><a href="std/d/lexer.keywords.html">keywords</a></td><td></td><td>Kewords</td></tr><tr><td><a href="std/d/lexer.dynamicTokens.html">dynamicTokens</a></td><td></td><td>Other tokens</td></tr><tr><td><a href="std/d/lexer.StringBehavior.html">StringBehavior</a></td><td></td><td>Configure string lexing behavior</td></tr></table>
+<h3>Aliases</h3>
+<table>
+<tr><td><a href="std/d/lexer.IdType.html">IdType</a></td><td><pre><code>TokenIdType!(operators, dynamicTokens, keywords)</code></pre></td><td>Token ID type for the D lexer.</td></tr><tr><td><a href="std/d/lexer.str.html">str</a></td><td><pre><code>tokenStringRepresentation!(IdType, operators, dynamicTokens, keywords)</code></pre></td><td>Function used for converting an IdType to a string.</td></tr><tr><td><a href="std/d/lexer.Token.html">Token</a></td><td><pre><code>std.lexer.TokenStructure!(IdType, extraFields)</code></pre></td><td>The token type in the D lexer</td></tr></table>
+<h3>Functions</h3>
+<table>
+<tr><td><a href="std/d/lexer.isBasicType.html">isBasicType</a></td><td></td><td>Returns:  true if the given ID is for a basic type.</td></tr><tr><td><a href="std/d/lexer.isNumberLiteral.html">isNumberLiteral</a></td><td></td><td>Returns:  true if the given ID type is for a number literal.</td></tr><tr><td><a href="std/d/lexer.isOperator.html">isOperator</a></td><td></td><td>Returns:  true if the given ID type is for an operator.</td></tr><tr><td><a href="std/d/lexer.isKeyword.html">isKeyword</a></td><td></td><td>Returns:  true if the given ID type is for a keyword.</td></tr><tr><td><a href="std/d/lexer.isStringLiteral.html">isStringLiteral</a></td><td></td><td>Returns:  true if the given ID type is for a string literal.</td></tr><tr><td><a href="std/d/lexer.isProtection.html">isProtection</a></td><td></td><td>Returns:  true if the given ID type is for a protection attribute.</td></tr><tr><td><a href="std/d/lexer.getTokensForParser.html">getTokensForParser</a></td><td></td><td>Returns:  an array of tokens lexed from the given source code to the output range. All
+whitespace tokens are skipped and comments are attached to the token nearest
+to them.</td></tr><tr><td><a href="std/d/lexer.unDecorateComment.html">unDecorateComment</a></td><td></td><td>Removes "decoration" such as leading whitespace, leading + and * characters,
+and places the result into the given output range</td></tr></table>
+<h3>Structs</h3>
+<table>
+<tr><td><a href="std/d/lexer.LexerConfig.html">LexerConfig</a></td><td></td><td>Lexer configuration struct</td></tr><tr><td><a href="std/d/lexer.DLexer.html">DLexer</a></td><td></td><td>The D lexer struct.</td></tr><tr><td><a href="std/d/lexer.StringCache.html">StringCache</a></td><td></td><td>The string cache is used for string interning.</td></tr></table>
+<h3>Templates</h3>
+<table>
+<tr><td><a href="std/d/lexer.tok.html">tok</a></td><td></td><td>Template used to refer to D token types.</td></tr></table>
+</div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

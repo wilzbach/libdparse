@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../../style.css"/><script src="../../highlight.pack.js"></script>
+<title>tok</title>
+<base href="../../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.d.<a href="std/d/lexer.html">lexer</a>.tok</div>
+<pre><code>public template tok(string token)</code></pre>
+<div class="section">
+Template used to refer to D token types.
+</div>
+<div class="section">
+See the <b>operators</b>, <b>keywords</b>, and <b>dynamicTokens</b> enums for
+values that can be passed to this template.
+
+</div>
+<div class="section">
+<h3>Example</h3>
+
+<pre><code>import std.d.lexer;
+IdType t = tok!"floatLiteral";</code></pre>
+</div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

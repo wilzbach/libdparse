@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../../style.css"/><script src="../../highlight.pack.js"></script>
+<title>parseDeclaration</title>
+<base href="../../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.d.<a href="std/d/parser.Parser.html">parser</a>.<a href="std/d/parser.Parser.html">Parser</a>.parseDeclaration</div>
+<pre><code>public Declaration parseDeclaration()
+</code></pre><div class="section">
+Parses a Declaration
+</div>
+<div class="section">
+<pre class="grammar"><span style="font-weight: bold">declaration</span>:
+   <span>attribute</span>* 
+   ;
+<span style="font-weight: bold">declaration2</span>:
+     <span>aliasDeclaration</span>
+   | <span>aliasThisDeclaration</span>
+   | <span>classDeclaration</span>
+   | <span>conditionalDeclaration</span>
+   | <span>constructor</span>
+   | <span>destructor</span>
+   | <span>enumDeclaration</span>
+   | <span>functionDeclaration</span>
+   | <span>importDeclaration</span>
+   | <span>interfaceDeclaration</span>
+   | <span>mixinDeclaration</span>
+   | <span>mixinTemplateDeclaration</span>
+   | <span>pragmaDeclaration</span>
+   | <span>sharedStaticConstructor</span>
+   | <span>sharedStaticDestructor</span>
+   | <span>staticAssertDeclaration</span>
+   | <span>staticConstructor</span>
+   | <span>staticDestructor</span>
+   | <span>structDeclaration</span>
+   | <span>templateDeclaration</span>
+   | <span>unionDeclaration</span>
+   | <span>unittest</span>
+   | <span>variableDeclaration</span>
+   | <span>attributeDeclaration</span>
+   | <span>invariant</span>
+   | <span>versionSpecification</span>
+   | <span>debugSpecification</span>
+   | <span style="font-weight: italic; color: blue;">'{'</span> <span>declaration</span>+ <span style="font-weight: italic; color: blue;">'}'</span>
+   ;</pre>
+</div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

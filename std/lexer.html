@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style.css"/><script src="../highlight.pack.js"></script>
+<title>std.lexer</title>
+<base href="../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.lexer</div>
+<div class="section">
+
+This module contains a range-based compile-time _lexer generator.
+</div>
+<div class="section">
+
+The _lexer generator consists of a template mixin, Lexer, along with
+several helper templates for generating such things as token identifiers.
+
+To write a _lexer using this API:
+<ol><li>Create the string array constants for your language.
+       <ul><li><a href="#.staticTokens">staticTokens</a></li>
+           <li><a href="#.dynamicTokens">dynamicTokens</a></li>
+           <li><a href="#.possibleDefaultTokens">possibleDefaultTokens</a></li>
+           <li><a href="#.tokenHandlers">tokenHandlers</a></li>
+       </ul></li>
+   <li>Create aliases for the various token and token identifier types
+       specific to your language.
+       <ul><li>TokenIdType</li>
+           <li>tokenStringRepresentation</li>
+           <li>TokenStructure</li>
+           <li>TokenId</li>
+       </ul></li>
+   <li>Create a struct that mixes in the Lexer template mixin and
+       implements the necessary functions.
+       <ul><li>Lexer</li>
+       </ul></li>
+</ol>
+
+</div>
+<div class="section">
+<h3>Examples</h3>
+
+<ul><li>A _lexer for D is available <a href="https://github.com/Hackerpilot/Dscanner/blob/master/std/d/lexer.d">here</a>.</li>
+<li>A _lexer for Lua is available <a href="https://github.com/Hackerpilot/lexer-demo/blob/master/lualexer.d">here</a>.</li>
+<li>A _lexer for JSON is available <a href="https://github.com/Hackerpilot/lexer-demo/blob/master/jsonlexer.d">here</a>.</li>
+</ul>
+<a name="TemplateParameters"></a> 
+<dl><dt><a name="defaultTokenFunction"></a> <b>defaultTokenFunction</b>
+<dd>A function that serves as the default token lexing function. For most
+   languages this will be the identifier lexing function.</dd></dt>
+<dt><a name="tokenSeparatingFunction"></a> <b>tokenSeparatingFunction</b></dt>
+<dd>A function that is able to determine if an identifier/keyword has come
+   to an end. This function must return bool and take a single size_t
+   argument representing the number of bytes to skip over before looking for
+   a separating character.</dd>
+<dt><a name="staticTokens"></a> <b>staticTokens</b></dt>
+<dd>A listing of the tokens whose exact value never changes and which cannot
+   possibly be a token handled by the default token lexing function. The
+   most common example of this kind of token is an operator such as
+   <span style="color: red;">"*"</span>, or <span style="color: red;">"-"</span> in a programming language.</dd>
+<dt><a name="dynamicTokens"></a> <b>dynamicTokens</b></dt>
+<dd>A listing of tokens whose value is variable, such as whitespace,
+   identifiers, number literals, and string literals.</dd>
+<dt><a name="possibleDefaultTokens"></a> <b>possibleDefaultTokens</b></dt>
+<dd>A listing of tokens that could posibly be one of the tokens handled by
+   the default token handling function. An common example of this is
+   a keyword such as <span style="color: red;">"for"</span>, which looks like the beginning of
+   the identifier <span style="color: red;">"fortunate"</span>. <b>tokenSeparatingFunction</b> is
+   called to determine if the character after the <span style="color: red;">'r'</span> separates
+   the identifier, indicating that the token is <span style="color: red;">"for"</span>, or if
+   lexing should be turned over to the <b>defaultTokenFunction</b>.</dd>
+<dt><a name="tokenHandlers"></a> <b>tokenHandlers</b></dt>
+<dd>A mapping of prefixes to custom token handling function names. The
+   generated _lexer will search for the even-index elements of this array,
+   and then call the function whose name is the element immedately after the
+   even-indexed element. This is used for lexing complex tokens whose prefix
+   is fixed.</dd>
+</dl>
+
+Here are some example constants for a simple calculator _lexer:
+<pre><code>// There are a near infinite number of valid number literals, so numbers are
+// dynamic tokens.
+enum string[] dynamicTokens = ["numberLiteral", "whitespace"];
+
+// The operators are always the same, and cannot start a numberLiteral, so
+// they are staticTokens
+enum string[] staticTokens = ["-", "+", "*", "/"];
+
+// In this simple example there are no keywords or other tokens that could
+// look like dynamic tokens, so this is blank.
+enum string[] possibleDefaultTokens = [];
+
+// If any whitespace character or digit is encountered, pass lexing over to
+// our custom handler functions. These will be demonstrated in an example
+// later on.
+enum string[] tokenHandlers = [
+   "0", "lexNumber",
+   "1", "lexNumber",
+   "2", "lexNumber",
+   "3", "lexNumber",
+   "4", "lexNumber",
+   "5", "lexNumber",
+   "6", "lexNumber",
+   "7", "lexNumber",
+   "8", "lexNumber",
+   "9", "lexNumber",
+   " ", "lexWhitespace",
+   "\n", "lexWhitespace",
+   "\t", "lexWhitespace",
+   "\r", "lexWhitespace"
+];</code></pre>
+
+
+</div>
+<div class="section">
+<h3>Copyright</h3>
+ Brian Schott 2013
+
+</div>
+<div class="section">
+<h3>License</h3>
+ <a href="http://www.boost.org/LICENSE_1_0.txt Boost">License 1.0</a>
+
+</div>
+<div class="section">
+<h3>Authors</h3>
+ Brian Schott, with ideas shamelessly stolen from Andrei Alexandrescu
+
+</div>
+<div class="section">
+<h3>Source</h3>
+ 
+</div>
+<div class="section">
+<h3>Functions</h3>
+<table>
+<tr><td><a href="std/lexer.tokenStringRepresentation.html">tokenStringRepresentation</a></td><td></td><td>Looks up the string representation of the given token type.</td></tr></table>
+<h3>Structs</h3>
+<table>
+<tr><td><a href="std/lexer.TokenStructure.html">TokenStructure</a></td><td></td><td>The token that is returned by the lexer.
+</td></tr><tr><td><a href="std/lexer.LexerRange.html">LexerRange</a></td><td></td><td>Range structure that wraps the _lexer's input.</td></tr></table>
+<h3>Templates</h3>
+<table>
+<tr><td><a href="std/lexer.TokenIdType.html">TokenIdType</a></td><td></td><td>Template for determining the type used for a token type.</td></tr><tr><td><a href="std/lexer.TokenId.html">TokenId</a></td><td></td><td>Generates the token type identifier for the given symbol.</td></tr><tr><td><a href="std/lexer.Lexer.html">Lexer</a></td><td></td><td>The implementation of the _lexer is contained within this mixin template.</td></tr></table>
+</div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

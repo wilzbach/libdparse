@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../../style.css"/><script src="../../highlight.pack.js"></script>
+<title>getTokensForParser</title>
+<base href="../../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.d.<a href="std/d/lexer.html">lexer</a>.getTokensForParser</div>
+<pre><code>public const(Token)[] getTokensForParser(ubyte[] sourceCode, const LexerConfig config, StringCache* cache)
+</code></pre><div class="section">
+<h3>Returns</h3>
+ an array of tokens lexed from the given source code to the output range. All
+whitespace tokens are skipped and comments are attached to the token nearest
+to them.
+</div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

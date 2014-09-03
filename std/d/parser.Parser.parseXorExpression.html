@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../../style.css"/><script src="../../highlight.pack.js"></script>
+<title>parseXorExpression</title>
+<base href="../../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.d.<a href="std/d/parser.Parser.html">parser</a>.<a href="std/d/parser.Parser.html">Parser</a>.parseXorExpression</div>
+<pre><code>public ExpressionNode parseXorExpression()
+</code></pre><div class="section">
+Parses an XorExpression
+</div>
+<div class="section">
+<pre class="grammar"><span style="font-weight: bold">xorExpression</span>:
+     <span>andExpression</span>
+   | <span>xorExpression</span> <span style="font-weight: italic; color: blue;">'^'</span> <span>andExpression</span>
+   ;</pre>
+</div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

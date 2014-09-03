@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style.css"/><script src="../highlight.pack.js"></script>
+<title>LexerRange</title>
+<base href="../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.<a href="std/lexer.html">lexer</a>.LexerRange</div>
+<pre><code>public struct LexerRange</code></pre>
+<div class="section">
+Range structure that wraps the _lexer's input.
+</div>
+<div class="section">
+<h3>Variables</h3>
+<table>
+<tr><td><a href="std/lexer.LexerRange.bytes.html">bytes</a></td><td><pre><code>const(ubyte)[]</code></pre></td><td>The input _bytes.</td></tr><tr><td><a href="std/lexer.LexerRange.index.html">index</a></td><td><pre><code>size_t</code></pre></td><td>The range's current position.</td></tr><tr><td><a href="std/lexer.LexerRange.column.html">column</a></td><td><pre><code>size_t</code></pre></td><td>The current _column number.</td></tr><tr><td><a href="std/lexer.LexerRange.line.html">line</a></td><td><pre><code>size_t</code></pre></td><td>The current _line number.</td></tr></table>
+<h3>Functions</h3>
+<table>
+<tr><td><a href="std/lexer.LexerRange.this.html">this</a></td><td></td><td></td></tr><tr><td><a href="std/lexer.LexerRange.mark.html">mark</a></td><td></td><td>Returns:  a mark at the current position that can then be used with slice.</td></tr><tr><td><a href="std/lexer.LexerRange.seek.html">seek</a></td><td></td><td>Sets the range to the given position.
+</td></tr><tr><td><a href="std/lexer.LexerRange.slice.html">slice</a></td><td></td><td>Returs a slice of the input byte array between the given mark and the
+current position.
+Params m = the beginning index of the slice to return</td></tr><tr><td><a href="std/lexer.LexerRange.empty.html">empty</a></td><td></td><td>Implements the range primitive _empty.</td></tr><tr><td><a href="std/lexer.LexerRange.front.html">front</a></td><td></td><td>Implements the range primitive _front.</td></tr><tr><td><a href="std/lexer.LexerRange.peek.html">peek</a></td><td></td><td>Returns:  the current item as well as the items <i>p</i> items ahead.</td></tr><tr><td><a href="std/lexer.LexerRange.peekAt.html">peekAt</a></td><td></td><td></td></tr><tr><td><a href="std/lexer.LexerRange.canPeek.html">canPeek</a></td><td></td><td>Returns:  true if it is possible to peek <i>p</i> bytes ahead.</td></tr><tr><td><a href="std/lexer.LexerRange.popFront.html">popFront</a></td><td></td><td>Implements the range primitive _popFront.</td></tr><tr><td><a href="std/lexer.LexerRange.popFrontN.html">popFrontN</a></td><td></td><td>Implements the algorithm _popFrontN more efficiently. This function does
+not detect or handle newlines.</td></tr><tr><td><a href="std/lexer.LexerRange.incrementLine.html">incrementLine</a></td><td></td><td>Increments the range's line number and resets the column counter.</td></tr></table>
+</div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

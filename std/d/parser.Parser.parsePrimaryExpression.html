@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../../style.css"/><script src="../../highlight.pack.js"></script>
+<title>parsePrimaryExpression</title>
+<base href="../../"/>
+<script src="search.js"></script>
+</head>
+<body><div class="breadcrumbs">
+<table id="results"></table>
+<input type="search" id="search" placeholder="Search" onkeyup="searchSubmit(this.value, event)"/>
+std.d.<a href="std/d/parser.Parser.html">parser</a>.<a href="std/d/parser.Parser.html">Parser</a>.parsePrimaryExpression</div>
+<pre><code>public PrimaryExpression parsePrimaryExpression()
+</code></pre><div class="section">
+Parses a PrimaryExpression
+</div>
+<div class="section">
+<pre class="grammar"><span style="font-weight: bold">primaryExpression</span>:
+     <span>identifierOrTemplateInstance</span>
+   | <span style="font-weight: italic; color: blue;">'.'</span> <span>identifierOrTemplateInstance</span>
+   | <span>typeConstructor</span> <span style="font-weight: italic; color: blue;">'(') <span>basicType</span> <span style="font-weight: italic; color: blue;">'</span>'</span> <span style="font-weight: italic; color: blue;">'.'</span> <span style="font-weight: italic; color: blue;">Identifier</span>
+   | <span>basicType</span> <span style="font-weight: italic; color: blue;">'.'</span> <span style="font-weight: italic; color: blue;">Identifier</span>
+   | <span>basicType</span> <span>arguments</span>
+   | <span>typeofExpression</span>
+   | <span>typeidExpression</span>
+   | <span>vector</span>
+   | <span>arrayLiteral</span>
+   | <span>assocArrayLiteral</span>
+   | <span style="font-weight: italic; color: blue;">'('</span> <span>expression</span> <span style="font-weight: italic; color: blue;">')'</span>
+   | <span>isExpression</span>
+   | <span>lambdaExpression</span>
+   | <span>functionLiteralExpression</span>
+   | <span>traitsExpression</span>
+   | <span>mixinExpression</span>
+   | <span>importExpression</span>
+   | <span style="font-weight: italic; color: blue;">'$'</span>
+   | <span style="font-weight: italic; color: blue;">'this'</span>
+   | <span style="font-weight: italic; color: blue;">'super'</span>
+   | <span style="font-weight: italic; color: blue;">'_null'</span>
+   | <span style="font-weight: italic; color: blue;">'_true'</span>
+   | <span style="font-weight: italic; color: blue;">'_false'</span>
+   | <span style="font-weight: italic; color: blue;">'___DATE__'</span>
+   | <span style="font-weight: italic; color: blue;">'___TIME__'</span>
+   | <span style="font-weight: italic; color: blue;">'___TIMESTAMP__'</span>
+   | <span style="font-weight: italic; color: blue;">'___VENDOR__'</span>
+   | <span style="font-weight: italic; color: blue;">'___VERSION__'</span>
+   | <span style="font-weight: italic; color: blue;">'___FILE__'</span>
+   | <span style="font-weight: italic; color: blue;">'___LINE__'</span>
+   | <span style="font-weight: italic; color: blue;">'___MODULE__'</span>
+   | <span style="font-weight: italic; color: blue;">'___FUNCTION__'</span>
+   | <span style="font-weight: italic; color: blue;">'___PRETTY_FUNCTION__'</span>
+   | <span style="font-weight: italic; color: blue;">IntegerLiteral</span>
+   | <span style="font-weight: italic; color: blue;">FloatLiteral</span>
+   | <span style="font-weight: italic; color: blue;">StringLiteral</span>+
+   | <span style="font-weight: italic; color: blue;">CharacterLiteral</span>
+   ;</pre>
+</div>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
